@@ -31,3 +31,8 @@ class ResponseSampler:
         :return: A numpy array of (x, y) samples.
         """
         return np.array(list(self.sample_response(x_sams)))
+    def sample_xs(self, sample_size):
+        distinct_xs = np.unique(population[:, 0])
+        x_samp_index = np.linspace(0, len(distinct_xs)-1, sample_size).astype(int)
+        x_samples = distinct_xs[x_samp_index]
+        return (x_samp_index, x_samples)
