@@ -2,7 +2,7 @@ import numpy as np
 
 def getPopulation(file_path):
         files = np.load(file_path)
-        return files['arr_0']]
+        return files['arr_0']
         
         
 class PopulationSampler:
