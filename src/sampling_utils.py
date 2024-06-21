@@ -50,8 +50,7 @@ class PopulationSampler:
             subset = self.population[start_index:end_index, :]
             min_response_index = subset[:, 1].argmin()
             yield (subset[min_response_index, 0], subset[min_response_index, 1])
-
-def sample_highest_responses(self, x_sams=None):
+    def sample_highest_responses(self, x_sams=None):
         """
         Generates samples of the highest responses from the population based on the input x values.
         
