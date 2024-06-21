@@ -51,6 +51,23 @@ class PopulationSampler:
             min_response_index = subset[:, 1].argmin()
             yield (subset[min_response_index, 0], subset[min_response_index, 1])
 
+def sample_highest_responses(self, x_sams=None):
+        """
+        Generates samples of the highest responses from the population based on the input x values.
+        
+        :param x_sams: A list or array of x indices for which to generate lowest response samples.
+        :return: A generator yielding tuples of (x, y) samples with the highest y values for each x.
+        """
+        if x_sams is None:
+            x_sams = self.xindeces
+        
+        for x in x_sams:
+            start_index = x * self.n_repeat
+            end_index = start_index + self.n_repeat
+            subset = self.population[start_index:end_index, :]
+            max_response_index = subset[:, 1].argmax()
+            yield (subset[max_response_index, 0], subset[max_response_index, 1])
+
     def get_samples(self, x_sams):
         """
         Returns an array of sampled responses for the given x indices.
