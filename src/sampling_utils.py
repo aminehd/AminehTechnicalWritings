@@ -77,7 +77,7 @@ class PopulationSampler:
         return np.array(list(self.sample_response(x_sams)))
     def set_sample_xs(self, sample_size):
         distinct_xs = np.unique(self.population[:, 0])
-        x_samp_index = np.random.choice(len(distinct_xs), sample_size, replace=False)
+        x_samp_index = np.random.choice(len(distinct_xs), sample_size, replace=True)
         x_samples = distinct_xs[x_samp_index]
         self.xindeces = x_samp_index 
 
