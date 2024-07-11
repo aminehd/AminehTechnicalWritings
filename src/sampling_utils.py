@@ -4,7 +4,9 @@ def get_population(file_path):
         files = np.load(file_path)
         return files['arr_0']
         
-        
+class Population:
+    def __init__(self, population, seed=42):
+        pass
 class PopulationSampler:
     def __init__(self, population, seed=42):
         """
