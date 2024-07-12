@@ -30,6 +30,13 @@ class Population:
 
         def create_predictor_mesh():
             # m faces and each face len(range) dimensonal
+            input = (len(
+                self.population.predictors[name]
+            ) for name in self.population.predictors)
+            predictor_mesh = np.zeros(shape=list(input))
+            # TODO: replace 0 with the combination of values in the cell. 
+            # Even better is to use built in to create it directly 
+            # rather than creating zeros, and replacing
             return self
         def set_noise(self, noise_std):
             # Most of implementation is here
