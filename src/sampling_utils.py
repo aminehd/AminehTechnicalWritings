@@ -28,7 +28,7 @@ class Population:
             self.population.intercept = intercept
             return self
 
-        def create_predictor_mesh():
+        def create_predictor_mesh(self):
             # m faces and each face len(range) dimensonal
             input = (len(
                 self.population.predictors[name]
