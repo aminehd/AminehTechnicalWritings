@@ -43,6 +43,7 @@ class Population:
             return self
         
         def build(self):
+            self.create_predictor_mesh()
             return self.population
     
     def generate_data(self):
