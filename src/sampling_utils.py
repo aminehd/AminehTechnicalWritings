@@ -41,10 +41,6 @@ class Population:
     def generate_data(self):
         pass
 
-
-
-df = population.generate_data()
-print(df.head())
 # rename it to simplePopulationSampler. Implement a multi 
 # poplulation sampler where input population is not pd but population
 class PopulationSampler:
