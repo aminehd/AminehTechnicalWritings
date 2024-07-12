@@ -4,9 +4,49 @@ def get_population(file_path):
         files = np.load(file_path)
         return files['arr_0']
         
+import numpy as np
+import pandas as pd
+
 class Population:
-    def __init__(self, population, seed=42):
+    def __init__(self, num_samples):
+        self.predictors = {}
+        self.coefficients = {}
+        self.intercept = 0
+        self.noise_std = 1
+        self.predictor_mesh = None
+    
+    class Builder:
+        def __init__(self, num_samples):
+            self.population = Population(num_samples)
+        
+        def add_predictor(self, name, value_range, coefficient):
+            self.population.predictors[name] = value_range
+            self.population.coefficients[name] = coefficient
+            return self
+        
+        def set_intercept(self, intercept):
+            self.population.intercept = intercept
+            return self
+
+        def create_predictor_mesh():
+            # m faces and each face len(range) dimensonal
+            return self
+        def set_noise(self, noise_std):
+            # Most of implementation is here
+            return self
+        
+        def build(self):
+            return self.population
+    
+    def generate_data(self):
         pass
+
+
+
+df = population.generate_data()
+print(df.head())
+# rename it to simplePopulationSampler. Implement a multi 
+# poplulation sampler where input population is not pd but population
 class PopulationSampler:
     def __init__(self, population, seed=42):
         """
