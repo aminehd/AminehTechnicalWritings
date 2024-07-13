@@ -35,7 +35,7 @@ class Population:
             ) for name in self.population.predictors)
             self.population.predictor_mesh = np.empty(shape=list(input), dtype=object)
             # replace empty with the combination of values in the cell.
-            shape = self.population.pred_mesh.shape
+            shape = self.population.predictor_mesh.shape
             indices = np.indices(shape)
 
             preds = list(population.predictors.values())
