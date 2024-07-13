@@ -33,7 +33,7 @@ class Population:
             input = (len(
                 self.population.predictors[name]
             ) for name in self.population.predictors)
-            self.population.predictor_mesh = np.zeros(shape=list(input))
+            self.population.predictor_mesh = np.zeros(shape=list(input), dtype=object)
             # TODO: replace 0 with the combination of values in the cell. 
             # Even better is to use built in to create it directly 
             # rather than creating zeros, and replacing
