@@ -34,9 +34,18 @@ class Population:
                 self.population.predictors[name]
             ) for name in self.population.predictors)
             self.population.predictor_mesh = np.empty(shape=list(input), dtype=object)
-            # TODO: replace 0 with the combination of values in the cell. 
-            # Even better is to use built in to create it directly 
-            # rather than creating zeros, and replacing
+            # replace empty with the combination of values in the cell.
+            shape = self.population.predictors
+            indices = np.indices(shape)
+
+            preds = list(population.predictors.values())
+
+            for idx in np.ndindex(shape):
+                    temp = tuple(index[idx] for index in indices)
+                    population.pred_mesh[idx] = tuple(preds[i][temp[i]] for i in range(len(preds)))
+            
+            # TODO: test above
+            # TODO: go to set noise and create setnoise and repetion for each ...
             return self
         def set_noise(self, noise_std):
             # Most of implementation is here
