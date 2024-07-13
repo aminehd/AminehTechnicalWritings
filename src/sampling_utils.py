@@ -38,11 +38,11 @@ class Population:
             shape = self.population.predictor_mesh.shape
             indices = np.indices(shape)
 
-            preds = list(population.predictors.values())
+            preds = list(self.population.predictors.values())
 
             for idx in np.ndindex(shape):
                     temp = tuple(index[idx] for index in indices)
-                    population.pred_mesh[idx] = tuple(preds[i][temp[i]] for i in range(len(preds)))
+                    self.population.pred_mesh[idx] = tuple(preds[i][temp[i]] for i in range(len(preds)))
             
             # TODO: test above
             # TODO: go to set noise and create setnoise and repetion for each ...
