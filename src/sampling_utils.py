@@ -6,7 +6,10 @@ def get_population(file_path):
         
 import numpy as np
 import pandas as pd
-
+# class ObsAndResp:
+#     def __init__(self, predictor, coef, copies):
+#         self.predictor = predictor
+#         self.co
 class Population:
     def __init__(self, num_samples):
         self.predictors = {}
